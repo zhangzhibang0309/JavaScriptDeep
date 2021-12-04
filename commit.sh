@@ -1,5 +1,6 @@
 #! /bin/sh
 
 git add .
-git commit -m 更新
-git push
+read -p "input commit message: " msg
+git commit -m "$msg"
+git push origin main
