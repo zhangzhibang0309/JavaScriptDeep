@@ -14,7 +14,6 @@
 // var bar = obj.foo.bind("cba");
 // bar();
 
-
 // 3. 更明显的比较 说明bind比隐式绑定优先级更高
 function foo() {
   console.log(this);
@@ -25,3 +24,6 @@ var obj = {
   foo: foo.bind("cba"),
 };
 obj.foo();
+
+// 有个比较有意思的 bind和call比较
+// foo.bind("abc").call("qwe"); // this式abc 说明bind 更高
