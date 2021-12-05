@@ -1,6 +1,7 @@
 function createFnArray() {
   // js整数占据4B
   // 占据的空间是4M
+  // js的number是8B 但是v8有优化 比较小的数字占32位 称为sim
   var arr = new Array(1024 * 1024).fill(1);
   return function () {
     console.log(arr.length);
