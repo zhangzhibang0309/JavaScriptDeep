@@ -18,5 +18,3 @@ newLog("DEBUG")("新增了添加用户的功能");
 
 var nowAndDebugLog = log(new Date())("DEBUG");
 nowAndDebugLog("查找到xxxbug")
-
-
