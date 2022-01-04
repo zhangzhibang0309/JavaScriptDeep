@@ -12,7 +12,8 @@ function Student() {
   this.sno = 111;
 }
 
-Student.prototype = new Person();
+var p = new Person();
+Student.prototype = p;
 
 Student.prototype.studying = function () {
   console.log(this.name + "studying");
@@ -40,3 +41,6 @@ console.log(stu1.friends); // kobe
 console.log(stu2.friends); // kobe
 
 // 弊端3.在前面实现类的过程中都没有传递参数 传参数不好传  因为有的属性在原型中
+
+console.log(p);
+// console.log(Object.getOwnPropertyDescriptors(Object.prototype));

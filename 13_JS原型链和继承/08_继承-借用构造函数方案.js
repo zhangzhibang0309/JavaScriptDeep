@@ -15,7 +15,8 @@ function Student(name, age, friends, sno) {
   this.sno = 111;
 }
 
-Student.prototype = new Person();
+var p = new Person();
+Student.prototype = p;
 
 Student.prototype.studying = function () {
   console.log(this.name + "studying");
@@ -44,8 +45,6 @@ console.log(stu2.friends); // kobe
 
 // 解决弊端3.在前面实现类的过程中都没有传递参数 传参数不好传  因为有的属性在原型中
 // var stu3 = new Student("asd", 18);
-
-
 
 // 当然 这种方案还是有弊端
 // 1.第一个弊端:Person()多次调用 至少两次
