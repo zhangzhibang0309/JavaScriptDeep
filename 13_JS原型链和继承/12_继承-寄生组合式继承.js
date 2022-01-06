@@ -8,7 +8,7 @@ function createObject(o) {
 // 工具2
 function inheritPrototype(SbuType, SuperType) {
   SbuType.prototype = createObject(SuperType.prototype);
-//   SbuType.prototype = Object.create(SuperType.prototype);
+  //   SbuType.prototype = Object.create(SuperType.prototype);
   Object.defineProperty(SbuType.prototype, "constructor", {
     enumerable: false,
     configurable: true,
