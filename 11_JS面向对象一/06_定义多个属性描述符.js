@@ -33,6 +33,3 @@ Object.defineProperties(obj, {
 console.log(obj);
 obj.age = 100
 console.log(obj);
-
-
-//

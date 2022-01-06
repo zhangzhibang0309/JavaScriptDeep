@@ -1,4 +1,4 @@
-function foo() {
+function Foo() {
   console.log("foo~，函数体代码");
 }
 
@@ -6,7 +6,7 @@ function foo() {
 // foo()
 
 // 换一种方式来调用foo()函数：通过new关键字去调用一个函数，那么这个函数就是一个构造函数了
-var f1 = new foo();
+var f1 = new Foo();
 console.log(f1);
 // 如果一个函数使用new调用，那么它会执行如下操作
 // 1.在内存中创建一个新的对象（空对象）；

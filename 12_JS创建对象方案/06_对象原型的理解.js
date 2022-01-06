@@ -11,7 +11,7 @@ var info = {}; // [[prototype]]
 // console.log(obj.__proto__); // {}
 // console.log(info.__proto__); // {}
 // var obj = { name: "zzb",__proto__: {} };
-// es5之后梯控的Object.getPrototypeOf
+// es5之后提供的Object.getPrototypeOf
 // console.log(Object.getPrototypeOf(obj)) // {}
 
 // 2.原型有什么用呢？
