@@ -24,6 +24,7 @@ Student.prototype.studying = function () {
 
 var stu = new Student();
 console.log(stu.name);
+console.log(stu);
 stu.eating();
 stu.studying();
 console.log("+++++++++++++++++");

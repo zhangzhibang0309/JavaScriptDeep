@@ -13,15 +13,15 @@ var obj = {
 var obj2 = {
   address: "北京市",
 };
-obj.prototype = obj2;
+obj.__proto__ = obj2;
 
 //
-// console.log(obj.__proto__);
-// console.log(Object.prototype);
-// console.log(obj.__proto__ === Object.prototype); // true
+console.log(obj.__proto__);
+console.log(Object.prototype);
+console.log(obj.__proto__ === Object.prototype); // false
 
-console.log(Object.prototype); // 顶层原型 [Object: null prototype] {}
-console.log(Object.prototype.constructor);
-console.log(Object.prototype.__proto__); // 顶层原型也有一个原型__proto__ 指向null
+// console.log(Object.prototype); // 顶层原型 [Object: null prototype] {}
+// console.log(Object.prototype.constructor);
+// console.log(Object.prototype.__proto__); // 顶层原型也有一个原型__proto__ 指向null
 // 但是Object.prototype并不是空的（） 只是不可枚举 我们查看一下
-console.log(Object.getOwnPropertyDescriptors(Object.prototype));
+// console.log(Object.getOwnPropertyDescriptors(Object.prototype));
