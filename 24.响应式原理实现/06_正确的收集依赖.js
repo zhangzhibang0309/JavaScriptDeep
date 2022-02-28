@@ -1,3 +1,8 @@
+// 现在已经是能够正确的去收集依赖，然后能够监听
+// 但是还有几个问题：
+// 1. 在proxy的get方法里面depend.addDepend(activeReactiveFn)这里可以封装一个对象自己的方法，然后也不用传参数，只要表明是在收集依赖就可以
+// 2. reactiveFns现在是一个数组，数组里面的值并不是唯一的，所以可能在一个watchFn里面有多行get调用就会收集多次函数，导致一次响应式会多次调用函数
+
 class Depend {
   constructor() {
     this.reactiveFns = []
