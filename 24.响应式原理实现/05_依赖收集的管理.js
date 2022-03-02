@@ -1,3 +1,7 @@
+/**
+ * 这一页代码是不完整的，只是封装了一下Getdepend对象，收集依赖没用这个对象，也就不会产生我们设计好的数据结构
+ */
+
 class Depend {
   constructor() {
     this.reactiveFns = []

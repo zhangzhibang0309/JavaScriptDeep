@@ -44,4 +44,3 @@ console.log("name" in objProxy);
 // delete
 delete objProxy.name;
 console.log(obj)
-// 

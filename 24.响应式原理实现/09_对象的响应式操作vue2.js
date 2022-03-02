@@ -1,6 +1,3 @@
-// 此为vue3的响应式实现
-// 这样就不需要每次都new一个Proxy，而是可以通过工厂函数生产
-
 let activeReactiveFn = null;
 
 class Depend {

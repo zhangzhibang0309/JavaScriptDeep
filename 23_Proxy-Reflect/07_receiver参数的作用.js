@@ -13,7 +13,7 @@ const objProxy = new Proxy(obj, {
   /**
    * 这里代码是怎么执行的呢？
    * 以get举例，你return了个Reflect.get()，然后访问obj[key]
-   * 但是发现obj有个get方法，所以就进入get方法，去return this.name
+   * 但是发现obj有个get方法，所以就进入get方法，去return this._name
    * 问题是这里的this是什么呢？如果在这里你直接Reflect.get(target, key)的话，毫无疑问this是obj
    * 但是我们既然使用了proxy，就不想直接操作对象，所以就用第三个参数receiver
    * receiver === objProxy

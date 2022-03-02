@@ -65,7 +65,7 @@ const objProxy = new Proxy(obj, {
   },
   set: function(target, key, newValue, receiver) {
     Reflect.set(target, key, newValue, receiver)
-    // depend.notify()
+
     const depend = getDepend(target, key)
     depend.notify()
   }
