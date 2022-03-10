@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./06_throttle-v1-基本实现.js"></script>
+    <!-- <script src="./06_throttle-v1-基本实现.js"></script> -->
+    <!-- <script src="./07_throttle-v2-leading实现.js"></script> -->
+    <script src=""></script>
 
 </head>
 
@@ -22,7 +24,9 @@
         }
 
         // 节流处理
-        inputEl.oninput = throttle(inputChange,3000)
+        inputEl.oninput = throttle(inputChange, 3000)
+
+        inputEl.oninput = throttle(inputChange, 3000, { leading: false })
     </script>
 </body>
 
