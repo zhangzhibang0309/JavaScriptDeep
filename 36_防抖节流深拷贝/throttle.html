@@ -8,7 +8,10 @@
     <title>Document</title>
     <!-- <script src="./06_throttle-v1-基本实现.js"></script> -->
     <!-- <script src="./07_throttle-v2-leading实现.js"></script> -->
-    <script src=""></script>
+    <!-- <script src="./08_throttle-v3-tariling实现.js"></script> -->
+    <!-- <script src="./09_throttle-v4-this-参数.js"></script> -->
+    <!-- <script src="./10_throttle-v5-取消.js"></script> -->
+    <script src="./11_throttle-v6-返回值.js"></script>
 
 </head>
 
@@ -21,12 +24,50 @@
         let counter = 0
         const inputChange = function (event) {
             console.log(`发送了${++counter}次网络请求`, this, event)
+
+            return 111111
         }
 
         // 节流处理
-        inputEl.oninput = throttle(inputChange, 3000)
+        // inputEl.oninput = throttle(inputChange, 3000)
 
-        inputEl.oninput = throttle(inputChange, 3000, { leading: false })
+        // 处理leading
+        // inputEl.oninput = throttle(inputChange, 3000, { leading: false })
+
+        // 处理trailing
+        // inputEl.oninput = throttle(inputChange, 3000, {
+        //     leading: true, trailing: true
+        // })
+
+        // 带取消的节流
+        // const _throttle =
+        // throttle(inputChange, 3000, {
+        //     leading: true, trailing: true
+        // })
+        // inputEl.oninput = _throttle
+        // 取消
+        // const cancelBtn = document.querySelector("#cancel")
+        // cancelBtn.onclick = function () {
+        // _throttle.cancel()
+        // }
+
+        // 带返回值
+        const _throttle =
+            throttle(inputChange, 3000, {
+                leading: true, 
+                trailing: true,
+                resultCallback(res) {
+                    console.log(res)
+                }
+            })
+        const tempCallback = (...args) => {
+            _throttle.apply(inputEl,args).then(res => {
+                console.log("Promise:", res)
+            })
+        }
+        inputEl.oninput = tempCallback
+
+
     </script>
 </body>
 
