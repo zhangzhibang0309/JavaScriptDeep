@@ -12,6 +12,7 @@ function throttle(fn, interval, options = { leading: true, trailing: false }) {
     // 满足条件，第一次不加载，让lastTime = nowT ime，算出来第一次interval是0
     if (lastTime === 0 && leading === false) lastTime = nowTime;
 
+    const remainTime = interval - (nowTime - lastTime);
     if (remainTime <= 0) {
       // 真正需要执行的函数
       fn();

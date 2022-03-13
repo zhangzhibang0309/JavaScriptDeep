@@ -14,18 +14,18 @@
 </head>
 
 <body>
-    <input type="text">
+    <input id="inp" type="text">
     <button id="cancel">取消</button>
 
     <script>
-        const inputEl = document.querySelector("input")
-        let counter = 0
+        // const inputEl = document.querySelector("input")
+        // let counter = 0
 
-        const inputChange = function (event) {
-            console.log(`发送了第${++counter}次网络请求`, this, event)
+        // const inputChange = function (event) {
+        //     console.log(`发送了第${++counter}次网络请求`, this, event)
 
-            return "aaa"
-        }
+        //     return "aaa"
+        // }
 
         // 原生，没有节流
         // 这个地方传入的函数我们是没法调用的，所以我们没法在调用的时候传入什么参数，但是我们知道在调用时一定会被传入event，所以我们定义时可以写上形参event
@@ -53,18 +53,51 @@
 
         // 3.拿到返回值
         // 3.1 第一种方式拿值
-        const debounceChange = debounce(inputChange, 300, false, res => {
-            console.log("拿到真正执行函数的返回值：", res)
-        })
-        // 3.2 第二种方式拿值
-        const tempCallback = () => {
-            debounceChange().then(res => {
-                console.log("Promise的返回值结果：", res)
-            })
+        // const debounceChange = debounce(inputChange, 300, false, res => {
+        //     console.log("拿到真正执行函数的返回值：", res)
+        // })
+        // // 3.2 第二种方式拿值
+        // const tempCallback = () => {
+        //     debounceChange().then(res => {
+        //         console.log("Promise的返回值结果：", res)
+        //     })
+        // }
+
+        // inputEl.oninput = tempCallback
+
+
+
+
+
+        // 最终的调用方式
+        const inpEl = document.getElementById("inp")
+        const inputChange = (event) => {
+            console.log("111", this, event)
+
+            return "return"
         }
 
-        inputEl.oninput = tempCallback
+
+        const debounceChange = debounce(
+            inputChange,
+            1000,
+            true,
+            (res) => {
+                console.log(res)
+            })
+        const tempCallback = (...args) => {
+            debounceChange.apply(inpEl, args).then((res) => {
+                console.log(res)
+            })
+        }
+        inpEl.oninput = tempCallback
+
+        // 取消
+        const cancelBtn = document.querySelector("#cancel")
+        inputEl.onclick = function () {
+            debounceChange.cancel()
+        }
     </script>
 </body>
 
-</html> 
+</html>

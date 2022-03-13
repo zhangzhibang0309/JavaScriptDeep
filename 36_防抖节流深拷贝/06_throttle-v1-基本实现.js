@@ -1,6 +1,5 @@
 function throttle(fn, interval) {
   // 记录上一次触发事件的时间，只有第一次赋值的时候会执行，后面lastTimer只会在remainTime <= 0之后被赋值
-  const { leading, trailing } = options;
   let lastTime = 0;
 
   // 这个函数会被返回，绑定到某个事件上面，比如oninput

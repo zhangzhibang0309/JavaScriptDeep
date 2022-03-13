@@ -35,7 +35,7 @@ function throttle(fn, interval, options = { leading: true, trailing: false }) {
         // 为下一次定时器做准备
         timer = null;
         // 下一次
-        lastTime = !leading ? 0 : new Date().getTime( );
+        lastTime = !leading ? 0 : new Date().getTime();
         fn();
       }, remainTime);
     }
