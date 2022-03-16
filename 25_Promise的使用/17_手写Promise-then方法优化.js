@@ -25,7 +25,7 @@ class ZBPromise {
         });
       }
     };
-
+ 
     const reject = (reason) => {
       if (this.status === PROMISE_STATUS_PENDING) {
         queueMicrotask(() => {
@@ -86,3 +86,5 @@ setTimeout(() => {
     }
   );
 }, 1000);
+
+console.log(1)

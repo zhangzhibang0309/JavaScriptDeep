@@ -14,7 +14,7 @@ Function.prototype.hycall = function (thisArg, ...args) {
   // 4.将最终的结果返回出去
   return result;
 };
-
+      
 function foo(num1, num2) {
   console.log("foo函数被执行", this);
 }
