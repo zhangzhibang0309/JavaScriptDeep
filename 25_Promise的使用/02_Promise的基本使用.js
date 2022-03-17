@@ -16,7 +16,7 @@ fooPromise.then(
   (res) => {
     console.log(res);
   },
-  // catach方法传入的回调函数，回在Promise执行reject函数时，被回调
+  // catach方法传入的回调函数，会在Promise执行reject函数时，被回调
   (err) => {
     console.log(err);
   }

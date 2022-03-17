@@ -15,7 +15,7 @@
 // });
 
 // new Promise((resolve, reject) => {
-//   // 这里智能用resolve进入下一个阶段 但是实际的状态是由传入的promise决定的
+//   // 这里只能用resolve进入下一个阶段 但是实际的状态是由传入的promise决定的
 //   resolve(newPromise);
 // }).then(
 //   (res) => {
@@ -26,7 +26,7 @@
 //   }
 // );
 
-// 2传入
+// 2传入一个实现thenable的对象
 const newPromise = new Promise((resolve, reject) => {
   // pending -> fulfilled
   const obj = {

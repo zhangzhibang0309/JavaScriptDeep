@@ -26,20 +26,20 @@ const promise = new Promise((resolve, reject) => {
 // 2.then方法传入的回调函数是可以有返回值的
 // then方法本身也十有返回值得，他的返回值是Promise
 //  1> 如果我们返回的是一个普通值，那么这个普通的值会被作为一个新的Promise的resolve值
-// promise
-//   .then((res) => {
-//     // return new Promise(resolve => {
-//     //     resolve("aaaaa")
-//     // })
-//     // return普通值得时候，相当于上面一样，返回得是promise，并且调用了resolve
-//     return "aaaaa";
-//   })
-//   // 这个then 是上面return时new得Promise下的then
-//   // 这也是Promise能够链式调用的原因
-//   .then((res) => {
-//     // 这里的res就是上面得aaaaa
-//     console.log(res);
-//   });
+promise
+  .then((res) => {
+    // return new Promise(resolve => {
+    //     resolve("aaaaa")
+    // })
+    // return普通值得时候，相当于上面一样，返回得是promise，并且调用了resolve
+    return "aaaaa";
+  })
+  // 这个then 是上面return时new得Promise下的then
+  // 这也是Promise能够链式调用的原因
+  .then((res) => {
+    // 这里的res就是上面得aaaaa
+    console.log(res);
+  });
 
 //  2> 如果我们返回的是一个Promise
 promise.then((res) => {
