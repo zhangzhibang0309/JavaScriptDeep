@@ -58,6 +58,8 @@ promise.then(
     console.log(err);
   }
 );
+
+
 // 这是一个最基本的then方法的实现
 // 问题：
 //    1.现在then只能有一个，因为this.onFulfilled在最后一次then调用的时候之前的值被覆盖了，如果想要实现多个可以把这些函数放到一个数组
