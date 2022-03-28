@@ -16,4 +16,16 @@ function * foo() {
   console.log("函数执行结束~");
 }
 
-foo();
+const generator = foo();
+generator.next()
+// 执行第二段代码
+console.log("-------------")
+generator.next()
+// 执行第三段代码
+console.log("-------------")
+generator.next()
+// 执行第二段代码
+console.log("第四段-------------")
+generator.next()
+
+
