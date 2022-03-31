@@ -1,14 +1,14 @@
-function foo() { 
+function foo() {
   throw new Error("foo error message~");
 }
 
 function bar() {
   try {
     foo();
-  } catch (err) {
+  } catch (err) { 
     console.log(err.message);
   } finally {
-      console.log("finally代码执行")
+    console.log("finally代码执行");
   }
 }
 function test() {
