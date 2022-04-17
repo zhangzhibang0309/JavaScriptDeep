@@ -25,7 +25,6 @@ function hyCurrying(fn) {
   function curried(...args) {
     // 判断当前已经接收到的参数的个数 和参数本身需要接收的阐述是否已经一致了
     if (args.length >= fn.length) {
-        console.log(this)
       return fn.apply(this, args);
     } else {
       // 没有达到个数时，需要返回一个新的函数，继续来接收参数
@@ -44,3 +43,5 @@ var curryAdd = hyCurrying(add1);
 console.log(curryAdd(10, 20, 30));
 console.log(curryAdd(10)(20, 30));
 console.log(curryAdd(10)(20)(30));
+const temp = curryAdd(10)
+console.log(temp(20,30))
