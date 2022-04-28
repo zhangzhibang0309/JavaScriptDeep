@@ -55,4 +55,4 @@ var stu = new Student("zzb", 18, ["kobe"], 111, 100);
 console.log(stu);
 stu.studying();
 stu.eating();
-stu.running();
+stu.running(); 
