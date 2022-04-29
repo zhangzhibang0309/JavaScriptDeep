@@ -43,7 +43,7 @@ function Student(name, age, friends, sno, score) {
 //   enumerable: false,
 //   configurable: true,
 //   writable: true,
-//   value: "Student",
+//   value: "Student", 
 // });
 inheritPrototype(Student, Person);
 
@@ -54,5 +54,5 @@ Student.prototype.studying = function () {
 var stu = new Student("zzb", 18, ["kobe"], 111, 100);
 console.log(stu);
 stu.studying();
-stu.eating();
+stu.eating(); 
 stu.running(); 
