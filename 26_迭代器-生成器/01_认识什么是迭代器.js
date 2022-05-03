@@ -26,3 +26,4 @@ console.log(namesIterator.next());
 console.log(namesIterator.next());
 console.log(namesIterator.next());
 const num = [10, 20, 30, 40, 50];
+ 
